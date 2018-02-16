@@ -16,7 +16,7 @@ Options:
 from docopt import docopt
 import pickle
 
-from nltk.corpus import gutenberg
+import nltk
 
 from languagemodeling.ngram import NGram
 # from languagemodeling.ngram import NGram, AddOneNGram, InterpolatedNGram
@@ -33,8 +33,8 @@ if __name__ == '__main__':
     opts = docopt(__doc__)
 
     # load the data
-    # WORK HERE!! LOAD YOUR TRAINING CORPUS
-    sents = gutenberg.sents(['austen-emma.txt', 'austen-sense.txt'])
+    corpus = nltk.corpus.reader.plaintext.PlaintextCorpusReader(".","corpus.txt")
+    sents = corpus.sents()
 
     # train the model
     n = int(opts['-n'])
