@@ -57,9 +57,9 @@ class NGram(LanguageModel):
             for i in range(len(sent) - n + 1):
                 ngram = tuple(sent[i:i+n])  
                 count[ngram] += 1
+                count[ngram[:-1]] += 1
 
         self._count = dict(count)
-        print(self._count)
 
     def count(self, tokens):
         """Count for an n-gram or (n-1)-gram.
