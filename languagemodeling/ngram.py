@@ -178,9 +178,22 @@ class InterpolatedNGram(NGram):
             held_out_sents = sents[m:]
 
         print('Computing counts...')
-        # WORK HERE!!
         # COMPUTE COUNTS FOR ALL K-GRAMS WITH K <= N
+        count = defaultdict(int)
 
+        for sent in train_sents:
+
+            count[()] += len(sent) + 1
+
+            for k in range(1, n+1):
+                sent2 = ["<s>"]*(k-1) + sent + ["</s>"]
+
+                for i in range(len(sent2) - k + 1):
+                    kgram = tuple(sent2[i:i+k])
+                    count[kgram] += 1
+
+        self._count = dict(count)
+        
         # compute vocabulary size for add-one in the last step
         self._addone = addone
         if addone:
@@ -215,7 +228,7 @@ class InterpolatedNGram(NGram):
 
         tokens -- the k-gram tuple.
         """
-        # WORK HERE!! (JUST A RETURN STATEMENT)
+        return self._count.get(tokens, 0)
 
     def cond_prob(self, token, prev_tokens=None):
         """Conditional probability of a token.
