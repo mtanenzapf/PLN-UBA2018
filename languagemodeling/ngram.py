@@ -149,7 +149,10 @@ class AddOneNGram(NGram):
             prev_tokens = ()
         assert len(prev_tokens) == n - 1
 
-        # WORK HERE!!
+        count_prev_tokens_and_token = self.count(prev_tokens + (token,)) + 1
+        count_prev_tokens = self.count(prev_tokens) + self.V()
+        
+        return count_prev_tokens_and_token / count_prev_tokens
 
 
 class InterpolatedNGram(NGram):
