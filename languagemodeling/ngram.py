@@ -101,7 +101,15 @@ class NGram(LanguageModel):
 
         sent -- the sentence as a list of tokens.
         """
-        # WORK HERE!!
+        sent = ["<s>"]*(self._n-1) + sent + ["</s>"]
+        prob = 0.0
+
+        for i in range(len(sent) - self._n + 1):
+            ngram = tuple(sent[i:i+self._n])
+            ngram_prob = self.cond_prob(ngram[-1], ngram[:-1])
+            prob = prob + (math.log(ngram_prob, 2) if ngram_prob != 0 else -inf) 
+
+        return prob 
 
 
 class AddOneNGram(NGram):
