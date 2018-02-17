@@ -68,13 +68,19 @@ class NGram(LanguageModel):
         """
         return self._count.get(tokens, 0)
 
-    def cond_prob(self, token, prev_tokens=None):
+    def cond_prob(self, token, prev_tokens=()):
         """Conditional probability of a token.
 
         token -- the token.
         prev_tokens -- the previous n-1 tokens (optional only if n = 1).
         """
-        # WORK HERE!!
+        count_prev_tokens_and_token = self.count(prev_tokens + (token,))
+        count_prev_tokens = self.count(prev_tokens)
+        
+        if count_prev_tokens == 0:
+            return 0.0
+        else: 
+            return count_prev_tokens_and_token / count_prev_tokens
 
     def sent_prob(self, sent):
         """Probability of a sentence. Warning: subject to underflow problems.
