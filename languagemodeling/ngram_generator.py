@@ -12,13 +12,16 @@ class NGramGenerator(object):
 
         # compute the probabilities
         probs = defaultdict(dict)
-        # WORK HERE!!
-
-        self._probs = dict(probs)
+        for ngram, count in model._count.items():
+            if len(ngram) == self._n:
+                probs[ngram[:-1]][ngram[-1]] = count / model._count[ngram[:-1]]
+        self._probs = probs
 
         # sort in descending order for efficient sampling
+        my_sorted = lambda xs: sorted(xs, key=lambda x: (-x[1], x[0]))
         self._sorted_probs = sorted_probs = {}
-        # WORK HERE!!
+        for prev_tokens, prob_dict in probs.items():
+            sorted_probs[prev_tokens] = my_sorted(prob_dict.items())
 
     def generate_sent(self):
         """Randomly generate a sentence."""
