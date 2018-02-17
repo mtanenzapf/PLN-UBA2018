@@ -124,7 +124,11 @@ class AddOneNGram(NGram):
 
         # compute vocabulary
         self._voc = voc = set()
-        # WORK HERE!!
+        
+        for sent in sents:
+            for token in sent:
+                voc.add(token)
+        voc.add("</s>")
 
         self._V = len(voc)  # vocabulary size
 
