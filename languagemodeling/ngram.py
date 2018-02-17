@@ -193,13 +193,17 @@ class InterpolatedNGram(NGram):
                     count[kgram] += 1
 
         self._count = dict(count)
-        
+
         # compute vocabulary size for add-one in the last step
         self._addone = addone
         if addone:
             print('Computing vocabulary...')
             self._voc = voc = set()
-            # WORK HERE!!
+            
+            for sent in sents:
+                for token in sent:
+                    voc.add(token)
+            voc.add("</s>")
 
             self._V = len(voc)
 
