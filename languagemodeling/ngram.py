@@ -87,7 +87,14 @@ class NGram(LanguageModel):
 
         sent -- the sentence as a list of tokens.
         """
-        # WORK HERE!!
+        sent = ["<s>"]*(self._n-1) + sent + ["</s>"]
+        prob = 1.0
+
+        for i in range(len(sent) - self._n + 1):
+            ngram = tuple(sent[i:i+self._n])
+            prob = prob * self.cond_prob(ngram[-1], ngram[:-1])
+
+        return prob        
 
     def sent_log_prob(self, sent):
         """Log-probability of a sentence.
