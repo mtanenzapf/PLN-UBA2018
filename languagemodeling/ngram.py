@@ -107,7 +107,7 @@ class NGram(LanguageModel):
         for i in range(len(sent) - self._n + 1):
             ngram = tuple(sent[i:i+self._n])
             ngram_prob = self.cond_prob(ngram[-1], ngram[:-1])
-            prob = prob + (math.log(ngram_prob, 2) if ngram_prob != 0 else -inf) 
+            prob = prob + (math.log(ngram_prob, 2) if ngram_prob != 0 else -math.inf) 
 
         return prob 
 
