@@ -31,8 +31,9 @@ class NGramGenerator(object):
         prev_tokens = ['<s>'] * (n - 1)
         token = self.generate_token(tuple(prev_tokens))
         while token != '</s>':
-            # WORK HERE!!
-            pass
+            sent.append(token)
+            prev_tokens = (prev_tokens + [token])[1:]
+            token = self.generate_token(tuple(prev_tokens))
 
         return sent
 
