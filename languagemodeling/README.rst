@@ -16,7 +16,7 @@ La clase cuenta con los siguientes métodos:
 Dado un ngrama o un n-1grama, devuelve la cantidad de veces que aparece. Esto se hace usando el diccionario count que fue creado al inicializar la clase.
 
 - cond_prob
-Calcula la probabilidad condicional de un token dados los n-1 tokens anteriores. Para esto se divide la cantidad de veces que aparece el token despúes de los prev_tokens por la cantidad de veces que aparecen los prev_tokens. Los valores necesarios se obtienen del diccionario count.
+Calcula la probabilidad condicional de un token dados los n-1 tokens anteriores. Para esto se divide la cantidad de veces que aparece el token después de los prev_tokens por la cantidad de veces que aparecen los prev_tokens. Los valores necesarios se obtienen del diccionario count.
 
 - sent_prob
 Calcula la probabilidad de una oración. Para esto se multiplican las probabilidades de todos los ngramas de la oración, usando el método cond_prob.
@@ -29,6 +29,16 @@ Ejercicio 3
 
 Ejercicio 4
 -----------
+En este ejericio se pide implementar el suavizado add-one modificando la clase AddOneNGram en ngram.py.
+Al inicializar la clase se calcula el diccionario count como en NGram y además se calcula el tamaño del vocabulario que se guarda en la variable V.
+
+Se implementaron los siguientes métodos:
+
+- V
+Devuelve el tamaño del vocabulario.
+
+- cond_prob
+Calcula la probabilidad condicional de un token dados los n-1 tokens anteriores usando el suavizado add-one. Para esto se divide la cantidad de veces que aparece el token después de los prev_tokens + 1 por la cantidad de veces que aparecen los prev_tokens + V. Los valores necesarios se obtienen del diccionario count y de la variable V.
 
 Ejercicio 5
 -----------
