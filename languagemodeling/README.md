@@ -77,3 +77,8 @@ Perplexity: 9414.4376500024
 
 Ejercicio 6
 -----------
+En este ejercicio se pide implementar el suavizado por interpolación en la clase InterpolatedNGramen en ngram.py.
+Para poder hacer la interpolación se computan todos los kgramas con k<=n. Los lambdas de la interpolación se calculan en base a un único parámetro gamma, que puede ser dado o calculado en el momento. Si no se pasa ningún gamma, se separan un 10% de las oraciones para held out. Luego se prueban distintos gamma y se usa el que da la menor perplexity para el conjunto de held out.
+
+- cond_prob
+Devuelve la probabilidad condicional de un token usando suavizado por interpolación. Para esto se hacen n iteraciones, en cada una se calcula el lambda usando el gamma y se lo multiplica por la probabilidad condicional usando el método en la clase NGram. En la última iteración la probabilidad condicional se calcula usando la de add-one, a menos que la clase se inicialice indicando lo contrario, donde se usa la de NGram.
