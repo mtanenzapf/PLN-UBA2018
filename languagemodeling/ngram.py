@@ -55,7 +55,7 @@ class NGram(LanguageModel):
             sent = ["<s>"]*(self._n-1) + sent + ["</s>"]
 
             for i in range(len(sent) - n + 1):
-                ngram = tuple(sent[i:i+n])  
+                ngram = tuple(sent[i:i+n])
                 count[ngram] += 1
                 count[ngram[:-1]] += 1
 
@@ -76,10 +76,10 @@ class NGram(LanguageModel):
         """
         count_prev_tokens_and_token = self.count(prev_tokens + (token,))
         count_prev_tokens = self.count(prev_tokens)
-        
+
         if count_prev_tokens == 0:
             return 0.0
-        else: 
+        else:
             return count_prev_tokens_and_token / count_prev_tokens
 
     def sent_prob(self, sent):
@@ -94,7 +94,7 @@ class NGram(LanguageModel):
             ngram = tuple(sent[i:i+self._n])
             prob = prob * self.cond_prob(ngram[-1], ngram[:-1])
 
-        return prob        
+        return prob
 
     def sent_log_prob(self, sent):
         """Log-probability of a sentence.
@@ -107,9 +107,9 @@ class NGram(LanguageModel):
         for i in range(len(sent) - self._n + 1):
             ngram = tuple(sent[i:i+self._n])
             ngram_prob = self.cond_prob(ngram[-1], ngram[:-1])
-            prob = prob + (math.log(ngram_prob, 2) if ngram_prob != 0 else -math.inf) 
+            prob = prob + (math.log(ngram_prob, 2) if ngram_prob != 0 else -math.inf)
 
-        return prob 
+        return prob
 
 
 class AddOneNGram(NGram):
@@ -124,7 +124,7 @@ class AddOneNGram(NGram):
 
         # compute vocabulary
         self._voc = voc = set()
-        
+
         for sent in sents:
             for token in sent:
                 voc.add(token)
@@ -151,7 +151,7 @@ class AddOneNGram(NGram):
 
         count_prev_tokens_and_token = self.count(prev_tokens + (token,)) + 1
         count_prev_tokens = self.count(prev_tokens) + self.V()
-        
+
         return count_prev_tokens_and_token / count_prev_tokens
 
 
@@ -199,7 +199,7 @@ class InterpolatedNGram(NGram):
         if addone:
             print('Computing vocabulary...')
             self._voc = voc = set()
-            
+
             for sent in sents:
                 for token in sent:
                     voc.add(token)
@@ -248,10 +248,9 @@ class InterpolatedNGram(NGram):
 
         # WORK HERE!!
         # SUGGESTED STRUCTURE:
-        tokens = prev_tokens + (token,)
         prob = 0.0
         cum_lambda = 0.0  # sum of previous lambdas
-        
+
         for i in range(n):
             # i-th term of the sum
             if i < n - 1:
@@ -259,7 +258,7 @@ class InterpolatedNGram(NGram):
                 igram_count = self.count(prev_tokens[i:])
                 lambdaa = (1-cum_lambda)*igram_count / (igram_count+self._gamma)
 
-                cond_ml = super().cond_prob(token, prev_tokens[i:]) 
+                cond_ml = super().cond_prob(token, prev_tokens[i:])
 
             else:
                 # COMPUTE lambdaa AND cond_ml.
@@ -269,10 +268,10 @@ class InterpolatedNGram(NGram):
                 if self._addone:
                     count_prev_tokens_and_token = self.count(prev_tokens[i:] + (token,)) + 1
                     count_prev_tokens = self.count(prev_tokens[i:]) + self._V
-                    
+
                     cond_ml = count_prev_tokens_and_token / count_prev_tokens
                 else:
-                    cond_ml = super().cond_prob(token, prev_tokens[i:]) 
+                    cond_ml = super().cond_prob(token, prev_tokens[i:])
 
             prob += lambdaa * cond_ml
             cum_lambda += lambdaa

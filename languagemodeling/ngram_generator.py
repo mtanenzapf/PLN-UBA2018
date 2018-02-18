@@ -48,8 +48,9 @@ class NGramGenerator(object):
         assert len(prev_tokens) == n - 1
 
         probs = self._sorted_probs[prev_tokens]
-        
+
         return sample(probs)
+
 
 def sample(problist):
     r = random.random()  # between 0 and 1
@@ -60,5 +61,5 @@ def sample(problist):
         i += 1
         word, prob = problist[i]
         acum += prob
-    
+
     return word
