@@ -38,12 +38,14 @@ Genera una oración de manera aleatoria. Se comienza generando n-1 \<s\> como to
 
 Se generaron las siguientes oraciones:
 
-| n = 1 | La del volver al brazo al allí tan vez. <br><br> Magnar espada sintió hacer Walder demás. <br><br> Pelaje es tras sopló días casa hay no la iras su lugar las en el que. <br><br>
+| n | oraciones |
+|---|---|
+| 1 | La del volver al brazo al allí tan vez. <br><br> Magnar espada sintió hacer Walder demás. <br><br> Pelaje es tras sopló días casa hay no la iras su lugar las en el que. <br><br>
 De el hombre estaban lanzas a vamos tenido en por visto envejecido el rechazada en.
-| n = 2 | El rostro que dice Hullen no le trenzó el vestido. <br><br> No debimos apartarnos del corazón mismo la Casa Lannister asesinaron los estuviera presente cuando Ned con ellos. <br><br> Madre y empezó a lo vimos fueron arrollados por la mirada. <br><br> De verdad antes de roble caído.|
-| n = 3 | En la cima , hasta que la princesa Elia tendría que ser Ilyn , traedme su cabeza fue un sonido grave y sonoro , y de esas historias que la oportunidad de matarme , pero sólo porque pone veneno en la Balerion. <br><br> 
+| 2 | El rostro que dice Hullen no le trenzó el vestido. <br><br> No debimos apartarnos del corazón mismo la Casa Lannister asesinaron los estuviera presente cuando Ned con ellos. <br><br> Madre y empezó a lo vimos fueron arrollados por la mirada. <br><br> De verdad antes de roble caído.|
+| 3 | En la cima , hasta que la princesa Elia tendría que ser Ilyn , traedme su cabeza fue un sonido grave y sonoro , y de esas historias que la oportunidad de matarme , pero sólo porque pone veneno en la Balerion. <br><br> 
 Me has traído algún regalo por mi cara lo de Jon Nieve , tenían edad suficiente para el viaje ya se habían quedado con el frío que antes dormía empezaba a sentirse como una sombra blanca en los ojos. <br><br> Se había reunido en torno al otro lado del patio de armas ? <br><br> En aquella isla pedregosa en medio de las almenas , y aquí el chico gordo igual que no fuera hijo de mi autocontrol — advirtió Dany —.|
-| n = 4 |  Decidió que se mataría antes de seguir así. <br><br> Una fila de carromatos tirados por bueyes entraba en aquel momento las hojas caídas hacían más difícil seguir las huellas , pero era un precio muy alto — replicó Ned —. <br><br> Los cascos de sus corceles al cruzar el puente cuando lord Renly salió del Torreón de Craster en medio de la lluvia a un rostro humano , el enano , hincando una rodilla en el suelo. <br><br> 
+| 4 |  Decidió que se mataría antes de seguir así. <br><br> Una fila de carromatos tirados por bueyes entraba en aquel momento las hojas caídas hacían más difícil seguir las huellas , pero era un precio muy alto — replicó Ned —. <br><br> Los cascos de sus corceles al cruzar el puente cuando lord Renly salió del Torreón de Craster en medio de la lluvia a un rostro humano , el enano , hincando una rodilla en el suelo. <br><br> 
 Las mujeres recogían frutas en los jardines de la ribera antes de encontrar por fin un sitio donde haga calor .|
 
 Ejercicio 4: Suavizado add-one
@@ -64,6 +66,7 @@ Ejercicio 5: Evaluación de Modelos de Lenguaje
 Para este ejercicio se dividieron las oraciones del corpus en 2, 90% para entrenamiento y 10% para test. Se uso el script *train.py* para entrenar el modelo de suavizado add-one con el conjunto de oraciones de entrenamiento. Luego, se uso el script *eval.py* para calcular la log probability, la cross entropy y la perplexity usando las oraciones de test. Esto se hizo para n = 1,2,3 y 4.
 
 | n | Log probability | Cross entropy| Perplexity |
+|---|---|---|---|
 | 1 | -1277333.3393448822 | 9.510053600852347 | 729.1407896141487 |
 | 2 | -1364592.7015803868 | 10.159720517447077 | 1143.880412497499 |
 | 3 | -1686417.8203116502 | 12.555785847429531 | 6020.993511748579 |
@@ -83,6 +86,7 @@ Devuelve la probabilidad condicional de un token usando suavizado por interpolac
 Finalmente se intentaron buscar a mano los gammas que minimizan la perplexity para n = 1,2,3 y 4. Los gammas se probaron con hasta 1 decimal.
 
 | n | gamma | Perplexity |
+|---|---|---|
 | 1 | todos los gammas dan la misma perplexity | 762.5292125370454 |
 | 2 | 107.2 | 192.83350392552626 |
 | 3 | 138.6 | 170.1299139687285 |
