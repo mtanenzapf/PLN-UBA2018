@@ -52,6 +52,28 @@ Calcula la probabilidad condicional de un token dados los n-1 tokens anteriores 
 
 Ejercicio 5
 -----------
+Para este ejercicio se dividieron las oraciones del corpus en 2, 90% para entrenamiento y 10% para test. Se uso el script train.py para entrenar el modelo de suavizado add-one con el conjunto de oraciones de entrenamiento. Luego, se uso el script eval.py para calcular la log probability, la cross entropy y la perplexity usando las oraciones de test. Esto se hizo para n = 1,2,3,4.
+
+n = 1
+Log probability: -1277333.3393448822
+Cross entropy: 9.510053600852347
+Perplexity: 729.1407896141487
+
+n = 2
+Log probability: -1364592.7015803868
+Cross entropy: 10.159720517447077
+Perplexity: 1143.880412497499
+
+n = 3
+Log probability: -1686417.8203116502
+Cross entropy: 12.555785847429531
+Perplexity: 6020.993511748579
+
+n = 4
+Log probability: -1773033.340590898
+Cross entropy: 13.200659205971812
+Perplexity: 9414.4376500024
+
 
 Ejercicio 6
 -----------
