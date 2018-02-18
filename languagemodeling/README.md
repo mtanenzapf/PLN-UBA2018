@@ -82,3 +82,18 @@ Para poder hacer la interpolación se computan todos los kgramas con k<=n. Los l
 
 - cond_prob
 Devuelve la probabilidad condicional de un token usando suavizado por interpolación. Para esto se hacen n iteraciones, en cada una se calcula el lambda usando el gamma y se lo multiplica por la probabilidad condicional usando el método en la clase NGram. En la última iteración la probabilidad condicional se calcula usando la de add-one, a menos que la clase se inicialice indicando lo contrario, donde se usa la de NGram.
+
+Finalmente se intentaron buscar a mano los gammas que minimizan la perplexity para n=1,2,3 y 4. Los gammas se probaron con hasta 1 decimal.
+
+n=1
+En este caso todos los gammas dan la misma perplexity = 762.5292125370454
+
+n=2
+gamma =107.2 perplexity = 192.83350392552626
+
+n=3
+gamma =138.6 perplexity = 170.1299139687285
+ 
+n=4
+gamma = 162.3 perplexity = 169.27449519653618
+ 
