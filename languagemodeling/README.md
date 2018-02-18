@@ -37,6 +37,33 @@ Dada una lista de tokens, genera el siguiente token de manera aleatoria. Para es
 - generate_sent
 Genera una oración de manera aleatoria. Se comienza generando n-1 <s> como tokens previos y se llama a la función generate_token para conseguir el siguiente. Esto se repite llamande a generate_token con los tokens previos correspondientes hasta que el token conseguido sea </s>. Todos los tokens obtenidos forman la nueva oración.
 
+Se generaron las siguientes oraciones
+n=1
+La del volver al brazo al allí tan vez
+Magnar espada sintió hacer Walder demás
+Pelaje es tras sopló días casa hay no la iras su lugar las en el que
+De el hombre estaban lanzas a vamos tenido en por visto envejecido el rechazada en
+
+n=2
+El rostro que dice Hullen no le trenzó el vestido
+No debimos apartarnos del corazón mismo la Casa Lannister asesinaron los estuviera presente cuando Ned con ellos
+Madre y empezó a lo vimos fueron arrollados por la mirada.
+De verdad antes de roble caído.
+Pobre Jon se pelea con las articulaciones rígidas y esforzándose en el Perro con Cersei se alzaban entre dos noches.
+Os habéis elegido defender al Septon Supremo que acabe con la que lo siguió atacando .
+
+n=3
+En la cima , hasta que la princesa Elia tendría que ser Ilyn , traedme su cabeza fue un sonido grave y sonoro , y de esas historias que la oportunidad de matarme , pero sólo porque pone veneno en la Balerion .
+Me has traído algún regalo por mi cara lo de Jon Nieve , tenían edad suficiente para el viaje ya se habían quedado con el frío que antes dormía empezaba a sentirse como una sombra blanca en los ojos.
+Se había reunido en torno al otro lado del patio de armas ?
+En aquella isla pedregosa en medio de las almenas , y aquí el chico gordo igual que no fuera hijo de mi autocontrol — advirtió Dany —.
+
+n=4
+Decidió que se mataría antes de seguir así .
+Una fila de carromatos tirados por bueyes entraba en aquel momento las hojas caídas hacían más difícil seguir las huellas , pero era un precio muy alto — replicó Ned —.
+Los cascos de sus corceles al cruzar el puente cuando lord Renly salió del Torreón de Craster en medio de la lluvia a un rostro humano , el enano , hincando una rodilla en el suelo .
+Las mujeres recogían frutas en los jardines de la ribera antes de encontrar por fin un sitio donde haga calor .
+
 Ejercicio 4
 -----------
 En este ejericio se pide implementar el suavizado add-one modificando la clase AddOneNGram en ngram.py.
