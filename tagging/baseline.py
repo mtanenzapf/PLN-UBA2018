@@ -47,8 +47,6 @@ class BaselineTagger:
         for word, tags in word_tags.items():
             word_most_frequent_tag[word] = max(tags, key=tags.get)
 
-        print(word_most_frequent_tag)
-
         self._word_most_frequent_tag = word_most_frequent_tag
 
     def tag(self, sent):
@@ -63,11 +61,11 @@ class BaselineTagger:
 
         w -- the word.
         """
-        # WORK HERE!!
+        return self._word_most_frequent_tag.get(w, 'nc0s000')
 
     def unknown(self, w):
         """Check if a word is unknown for the model.
 
         w -- the word.
         """
-        # WORK HERE!!
+        return w not in self._word_most_frequent_tag.keys()
