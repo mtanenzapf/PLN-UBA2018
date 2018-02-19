@@ -23,13 +23,20 @@ class POSStats:
         """
         self._sent_count = len(tagged_sents)
 
+        token_count = 0
+        for sent in tagged_sents:
+            token_count += len(sent)
+        self._token_count = token_count
+
+
+
     def sent_count(self):
         """Total number of sentences."""
         return self._sent_count
 
     def token_count(self):
         """Total number of tokens."""
-        # WORK HERE!!
+        return self._token_count
 
     def words(self):
         """Vocabulary (set of word types)."""
