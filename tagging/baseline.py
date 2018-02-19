@@ -37,7 +37,13 @@ class BaselineTagger:
         """
         tagged_sents -- training sentences, each one being a list of pairs.
         """
-        # WORK HERE!!
+        word_tags = defaultdict(dict)
+
+        for sent in tagged_sents:
+            for word, tag in set:
+                word_tags[word][tag] = word_tags.get(word, {}).get(tag, 0) + 1
+
+        self._word_tags = word_tags
 
     def tag(self, sent):
         """Tag a sentence.
