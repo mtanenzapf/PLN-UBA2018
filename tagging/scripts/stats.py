@@ -32,6 +32,7 @@ class POSStats:
         tags = set()
         word_freq = defaultdict(int)
         tag_freq = defaultdict(int)
+        tag_words = defaultdict(dict)
         
         for sent in tagged_sents:
             for word, tag in sent:
@@ -39,11 +40,13 @@ class POSStats:
                 tags.add(tag)
                 word_freq[word] += 1
                 tag_freq[tag] += 1
+                tag_words[tag][word] = tag_words.get(tag, {}).get(word, 0) + 1
 
         self._words = words
         self._tags = tags
         self._word_freq = word_freq
         self._tag_freq = tag_freq
+        self._tag_words = tag_words
 
     def sent_count(self):
         """Total number of sentences."""
@@ -90,7 +93,7 @@ class POSStats:
 
     def tag_word_dict(self, t):
         """Dictionary of words and their counts for tag t."""
-        return dict(self._tcount[t])
+        return self._tag_words.get(t, {})
 
 
 if __name__ == '__main__':
