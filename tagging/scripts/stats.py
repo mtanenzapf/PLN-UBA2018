@@ -47,7 +47,7 @@ class POSStats:
 
     def words(self):
         """Vocabulary (set of word types)."""
-        # WORK HERE!!
+        return self._words
 
     def word_count(self):
         """Vocabulary size."""
