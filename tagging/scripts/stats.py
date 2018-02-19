@@ -80,7 +80,7 @@ class POSStats:
 
         n -- number of tags.
         """
-        # WORK HERE!!
+        return set([word for word in self._words if len(self._word_tags[word]) == n])
 
     def tags(self):
         """POS Tagset."""
