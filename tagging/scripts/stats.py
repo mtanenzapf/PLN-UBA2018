@@ -78,7 +78,7 @@ class POSStats:
 
     def tags(self):
         """POS Tagset."""
-        # WORK HERE!!
+        return self._tags
 
     def tag_count(self):
         """POS tagset size."""
