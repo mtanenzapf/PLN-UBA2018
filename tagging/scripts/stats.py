@@ -29,10 +29,13 @@ class POSStats:
         self._token_count = token_count
 
         words = set()
+        tags = set()
         for sent in tagged_sents:
-            for word in sent:
-                words.add(word[0])
+            for word, tag in sent:
+                words.add(word)
+                tags.add(tag)
         self._words = words
+        self._tags = tags
 
     def sent_count(self):
         """Total number of sentences."""
@@ -71,7 +74,7 @@ class POSStats:
 
     def tag_count(self):
         """POS tagset size."""
-        # WORK HERE!!
+        return len(self._tags)
 
     def tag_freq(self, t):
         """Frequency of tag t."""
