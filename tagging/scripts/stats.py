@@ -21,12 +21,11 @@ class POSStats:
         """
         tagged_sents -- corpus (list/iterable/generator of tagged sentences)
         """
-        # WORK HERE!!
-        # COLLECT REQUIRED STATISTICS INTO DICTIONARIES.
+        self._sent_count = len(tagged_sents)
 
     def sent_count(self):
         """Total number of sentences."""
-        # WORK HERE!!
+        return self._sent_count
 
     def token_count(self):
         """Total number of tokens."""
