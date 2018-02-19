@@ -33,6 +33,7 @@ class POSStats:
         word_freq = defaultdict(int)
         tag_freq = defaultdict(int)
         tag_words = defaultdict(dict)
+        word_tags = defaultdict(set)
         
         for sent in tagged_sents:
             for word, tag in sent:
@@ -41,12 +42,14 @@ class POSStats:
                 word_freq[word] += 1
                 tag_freq[tag] += 1
                 tag_words[tag][word] = tag_words.get(tag, {}).get(word, 0) + 1
+                word_tags[word].add(tag)
 
         self._words = words
         self._tags = tags
         self._word_freq = word_freq
         self._tag_freq = tag_freq
         self._tag_words = tag_words
+        self._word_tags = word_tags
 
     def sent_count(self):
         """Total number of sentences."""
@@ -70,7 +73,7 @@ class POSStats:
 
     def unambiguous_words(self):
         """List of words with only one observed POS tag."""
-        # WORK HERE!!
+        return set([word for word in self._words if len(self._word_tags[word]) == 1])
 
     def ambiguous_words(self, n):
         """List of words with n different observed POS tags.
