@@ -21,8 +21,7 @@ class POSStats:
         """
         tagged_sents -- corpus (list/iterable/generator of tagged sentences)
         """
-        self._sent_count = len(tagged_sents)
-
+        sent_count = 0
         token_count = 0
         words = set()
         tags = set()
@@ -32,6 +31,7 @@ class POSStats:
         word_tags = defaultdict(set)
 
         for sent in tagged_sents:
+            sent_count += 1
             token_count += len(sent)
             for word, tag in sent:
                 words.add(word)
@@ -41,6 +41,7 @@ class POSStats:
                 tag_words[tag][word] = tag_words.get(tag, {}).get(word, 0) + 1
                 word_tags[word].add(tag)
 
+        self._sent_count = sent_count
         self._token_count = token_count
         self._words = words
         self._tags = tags
