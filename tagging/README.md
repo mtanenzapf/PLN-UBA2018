@@ -14,7 +14,7 @@ tags: 85
 **Most Frequent POS Tags**
 
 |tag	 |freq	|%     |top|
-|===|===|===|===|
+|---|---|---|---|
 |sp000	 |79884	|15.45 |(de, en, a, del, con)|
 |nc0s000 |63452	|12.27 |(presidente, equipo, partido, país, año)|
 |da0000	 |54549	|10.55 |(la, el, los, las, El)|
@@ -40,7 +40,7 @@ cc	Conjunction (coordinating)	y, o, pero
 **Word Ambiguity Levels**
 
 |n	|words	|%	|top|
-|===|===|===|===|
+|---|---|---|---|
 |1	|43972	|94.56	|(,, con, por, su, El)|
 |2	|2318	|4.98	|(el, en, y, ", los)|
 |3	|180	|0.39	|(de, la, ., un, no)|
