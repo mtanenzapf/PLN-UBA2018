@@ -24,18 +24,15 @@ class POSStats:
         self._sent_count = len(tagged_sents)
 
         token_count = 0
-        for sent in tagged_sents:
-            token_count += len(sent)
-        self._token_count = token_count
-
         words = set()
         tags = set()
         word_freq = defaultdict(int)
         tag_freq = defaultdict(int)
         tag_words = defaultdict(dict)
         word_tags = defaultdict(set)
-        
+
         for sent in tagged_sents:
+            token_count += len(sent)
             for word, tag in sent:
                 words.add(word)
                 tags.add(tag)
@@ -44,6 +41,7 @@ class POSStats:
                 tag_words[tag][word] = tag_words.get(tag, {}).get(word, 0) + 1
                 word_tags[word].add(tag)
 
+        self._token_count = token_count
         self._words = words
         self._tags = tags
         self._word_freq = word_freq
