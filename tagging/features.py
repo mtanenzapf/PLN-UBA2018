@@ -17,6 +17,7 @@ def word_lower(h):
     sent, i = h.sent, h.i
     return sent[i].lower()
 
+
 def prev_tags(h):
     """Feature: previous tags tuple.
 
@@ -39,7 +40,8 @@ def word_isupper(h):
 
     h -- a history.
     """
-    # WORK HERE!! USE STRING METHOD isupper()
+    sent, i = h.sent, h.i
+    return sent[i].isupper()
 
 
 def word_isdigit(h):
