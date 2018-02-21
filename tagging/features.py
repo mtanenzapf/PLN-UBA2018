@@ -49,7 +49,8 @@ def word_isdigit(h):
 
     h -- a history.
     """
-    # WORK HERE!! USE STRING METHOD isdigit()
+    sent, i = h.sent, h.i
+    return sent[i].isdigit()
 
 
 class NPrevTags(Feature):
