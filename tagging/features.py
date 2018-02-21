@@ -30,7 +30,8 @@ def word_istitle(h):
 
     h -- a history.
     """
-    # WORK HERE!! USE STRING METHOD istitle()
+    sent, i = h.sent, h.i
+    return sent[i].istitle()
 
 
 def word_isupper(h):
@@ -63,7 +64,7 @@ class NPrevTags(Feature):
 
         h -- a history.
         """
-        # WORK HERE!!
+        return h.prev_tags[-self._n:]
 
 
 class PrevWord(Feature):
