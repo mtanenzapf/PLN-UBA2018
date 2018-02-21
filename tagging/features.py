@@ -14,8 +14,8 @@ def word_lower(h):
 
     h -- a history.
     """
-    # WORK HERE!! USE STRING METHOD lower()
-
+    sent, i = h.sent, h.i
+    return sent[i].lower()
 
 def prev_tags(h):
     """Feature: previous tags tuple.
