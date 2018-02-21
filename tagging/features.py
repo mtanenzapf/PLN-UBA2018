@@ -22,7 +22,7 @@ def prev_tags(h):
 
     h -- a history.
     """
-    # WORK HERE!!
+    return h.prev_tags
 
 
 def word_istitle(h):
