@@ -23,13 +23,13 @@ import pickle
 from ancora import SimpleAncoraCorpusReader
 
 from tagging.baseline import BaselineTagger, BadBaselineTagger
-# from tagging.memm import MEMM
+from tagging.memm import MEMM
 
 
 models = {
     'badbase': BadBaselineTagger,
     'base': BaselineTagger,
-    # 'memm': MEMM,
+    'memm': MEMM,
 }
 
 
