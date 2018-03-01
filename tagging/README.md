@@ -26,16 +26,16 @@ En este ejercicio se calculan estadísticas del corpus AnCora. Se obtuvieron los
 |rg	 |15336	|2.97  |(más, hoy, también, ayer, ya)|
 |cc	 |15023	|2.90  |(y, pero, o, Pero, e)|
 
-sp000	Preposition	en, de, entre
-nc0s000	Common noun (singular)	lista, hotel, partido
-da0000	Article (definite)	el, la, los, las
-aq0000	Adjective (descriptive)	populares, elegido, emocionada, andaluz
-fc      Comma	,
-np00000	Proper noun	Málaga, Parlamento, UFINSA
-nc0p000	Common noun (plural)	años, elecciones
-fp	Period / full-stop	.
-rg	Adverb (general)	siempre, más, personalmente
-cc	Conjunction (coordinating)	y, o, pero
+sp000	Preposition	en, de, entre<br>
+nc0s000	Common noun (singular)	lista, hotel, partido<br>
+da0000	Article (definite)	el, la, los, las<br>
+aq0000	Adjective (descriptive)	populares, elegido, emocionada, andaluz<br>
+fc      Comma	,<br>
+np00000	Proper noun	Málaga, Parlamento, UFINSA<br>
+nc0p000	Common noun (plural)	años, elecciones<br>
+fp	Period / full-stop	.<br>
+rg	Adverb (general)	siempre, más, personalmente<br>
+cc	Conjunction (coordinating)	y, o, pero<br>
 
 **Word Ambiguity Levels**
 
