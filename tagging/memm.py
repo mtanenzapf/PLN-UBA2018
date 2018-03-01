@@ -1,6 +1,3 @@
-from math import log2
-from numpy import exp2
-
 from featureforge.vectorizer import Vectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
