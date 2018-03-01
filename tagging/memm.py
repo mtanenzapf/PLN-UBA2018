@@ -24,7 +24,6 @@ class MEMM:
         clf -- classifying model, one of 'svm', 'maxent', 'mnb' (default: 'svm').
         """
         # 1. build the pipeline
-        # WORK HERE!!
         self.n = n
         basic_features = [word_lower, word_istitle, word_isupper, word_isdigit]
         parametrized_features = [cf(feature) for feature in basic_features for cf in [PrevWord, NextWord]]
@@ -35,8 +34,6 @@ class MEMM:
             ('clf', classifiers[clf]())
         ])
 
-        histories = self.sents_histories(tagged_sents)
-
         # 2. train it
         print('Training classifier...')
         X = self.sents_histories(tagged_sents)
@@ -44,7 +41,6 @@ class MEMM:
         pipeline.fit(list(X), list(y))
 
         # 3. build known words set
-        # WORK HERE!!
         vocabulary = set()
         for sent in tagged_sents:
             for word, _ in sent:
@@ -97,7 +93,6 @@ class MEMM:
 
         sent -- the sentence.
         """
-        # WORK HERE!!
         prev_tags = ("<s>",) * (self.n-1)
         tagged = [self.tag_history(History(sent, prev_tags, 0))]
 
@@ -112,7 +107,6 @@ class MEMM:
 
         h -- the history.
         """
-        # WORK HERE!!
         return self._pipeline.predict([h])[0]
 
     def unknown(self, w):
@@ -120,5 +114,4 @@ class MEMM:
 
         w -- the word.
         """
-        # WORK HERE!!
         return w not in self._vocabulary
