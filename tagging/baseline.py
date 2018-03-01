@@ -49,6 +49,7 @@ class BaselineTagger:
             word_most_frequent_tag[word] = max(tags, key=tags.get)
 
         self._word_most_frequent_tag = word_most_frequent_tag
+        self._default_tag = default_tag
 
     def tag(self, sent):
         """Tag a sentence.
@@ -62,7 +63,7 @@ class BaselineTagger:
 
         w -- the word.
         """
-        return self._word_most_frequent_tag.get(w, 'nc0s000')
+        return self._word_most_frequent_tag.get(w, self._default_tag)
 
     def unknown(self, w):
         """Check if a word is unknown for the model.
