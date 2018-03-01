@@ -58,7 +58,7 @@ Se implementó un baseline tagger que dada una palabra, le asigna la etiqueta m�
 
 Se entrenó el modelo con el script *train.py* y se evaluó con *eval.py* y se obtuvieron los siguientes resu|ltados:
 
-100.0% (87.58% / 95.26% / 18.01%)
+100.0% (87.58% / 95.26% / 18.01%)<br>
 Accuracy: 87.58% / 95.26% / 18.01%
 
 |g \ m	|sp000	|nc0s000|da0000	|aq0000	|fc	|nc0p000|rg	|np00000|fp	|cc	|
