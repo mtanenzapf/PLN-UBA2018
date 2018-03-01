@@ -13,29 +13,18 @@ En este ejercicio se calculan estadísticas del corpus AnCora. Se obtuvieron los
 
 **Most Frequent POS Tags**
 
-|tag	 |freq	|%     |top|
-|---|---|---|---|
-|sp000	 |79884	|15.45 |(de, en, a, del, con)|
-|nc0s000 |63452	|12.27 |(presidente, equipo, partido, país, año)|
-|da0000	 |54549	|10.55 |(la, el, los, las, El)|
-|aq0000	 |33906	|6.56  |(pasado, gran, mayor, nuevo, próximo)|
-|fc	 |30147	|5.83  |(,)|
-|np00000 |29111	|5.63  |(Gobierno, España, PP, Barcelona, Madrid)||
-|nc0p000 |27736	|5.36  |(años, millones, personas, países, días)
-|fp	 |17512	|3.39  |(.)|
-|rg	 |15336	|2.97  |(más, hoy, también, ayer, ya)|
-|cc	 |15023	|2.90  |(y, pero, o, Pero, e)|
-
-sp000	Preposition	en, de, entre
-nc0s000	Common noun (singular)	lista, hotel, partido
-da0000	Article (definite)	el, la, los, las
-aq0000	Adjective (descriptive)	populares, elegido, emocionada, andaluz
-fc      Comma	,
-np00000	Proper noun	Málaga, Parlamento, UFINSA
-nc0p000	Common noun (plural)	años, elecciones
-fp	Period / full-stop	.
-rg	Adverb (general)	siempre, más, personalmente
-cc	Conjunction (coordinating)	y, o, pero
+|tag	 |freq	|%     |top| meaning|
+|---|---|---|---|---|
+|sp000	 |79884	|15.45 |(de, en, a, del, con)|Preposition: en, de, entre|
+|nc0s000 |63452	|12.27 |(presidente, equipo, partido, país, año)| Common noun (singular): lista, hotel, partido|
+|da0000	 |54549	|10.55 |(la, el, los, las, El)|Article (definite): el, la, los, las|
+|aq0000	 |33906	|6.56  |(pasado, gran, mayor, nuevo, próximo)|Adjective (descriptive): populares, elegido, emocionada, andaluz|
+|fc	 |30147	|5.83  |(,)|Comma|
+|np00000 |29111	|5.63  |(Gobierno, España, PP, Barcelona, Madrid)|Proper noun: Málaga, Parlamento, UFINSA|
+|nc0p000 |27736	|5.36  |(años, millones, personas, países, días)|Common noun (plural): años, elecciones|
+|fp	 |17512	|3.39  |(.)|Period / full-stop|
+|rg	 |15336	|2.97  |(más, hoy, también, ayer, ya)|Adverb (general): siempre, más, personalmente|
+|cc	 |15023	|2.90  |(y, pero, o, Pero, e)|Conjunction (coordinating): y, o, pero|
 
 **Word Ambiguity Levels**
 
